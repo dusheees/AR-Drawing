@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5519DC5720238B6000B1008D /* OptionSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5519DC5620238B6000B1008D /* OptionSelectorViewController.swift */; };
+		55C4DFF7288584EF00B956FB /* Screensho01.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55C4DFF0288584EF00B956FB /* Screensho01.PNG */; };
+		55C4DFF8288584EF00B956FB /* Screensho03.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55C4DFF1288584EF00B956FB /* Screensho03.PNG */; };
+		55C4DFF9288584EF00B956FB /* Screensho02.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55C4DFF2288584EF00B956FB /* Screensho02.PNG */; };
+		55C4DFFA288584EF00B956FB /* Screensho06.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55C4DFF3288584EF00B956FB /* Screensho06.PNG */; };
+		55C4DFFB288584EF00B956FB /* Screensho07.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55C4DFF4288584EF00B956FB /* Screensho07.PNG */; };
+		55C4DFFC288584EF00B956FB /* Screensho05.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55C4DFF5288584EF00B956FB /* Screensho05.PNG */; };
+		55C4DFFD288584EF00B956FB /* Screensho04.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55C4DFF6288584EF00B956FB /* Screensho04.PNG */; };
 		BE618F32203E31B8005EC6F1 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE618F31203E31B8005EC6F1 /* UIViewController+Extensions.swift */; };
 		BE915EAB20105C1D00A251FD /* OptionsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE915EAA20105C1D00A251FD /* OptionsContainerViewController.swift */; };
 		BEDB2EDA200EABAD001C6BBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDB2ED9200EABAD001C6BBC /* AppDelegate.swift */; };
@@ -22,6 +29,13 @@
 
 /* Begin PBXFileReference section */
 		5519DC5620238B6000B1008D /* OptionSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectorViewController.swift; sourceTree = "<group>"; };
+		55C4DFF0288584EF00B956FB /* Screensho01.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screensho01.PNG; sourceTree = "<group>"; };
+		55C4DFF1288584EF00B956FB /* Screensho03.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screensho03.PNG; sourceTree = "<group>"; };
+		55C4DFF2288584EF00B956FB /* Screensho02.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screensho02.PNG; sourceTree = "<group>"; };
+		55C4DFF3288584EF00B956FB /* Screensho06.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screensho06.PNG; sourceTree = "<group>"; };
+		55C4DFF4288584EF00B956FB /* Screensho07.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screensho07.PNG; sourceTree = "<group>"; };
+		55C4DFF5288584EF00B956FB /* Screensho05.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screensho05.PNG; sourceTree = "<group>"; };
+		55C4DFF6288584EF00B956FB /* Screensho04.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screensho04.PNG; sourceTree = "<group>"; };
 		BE618F31203E31B8005EC6F1 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		BE915EAA20105C1D00A251FD /* OptionsContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsContainerViewController.swift; sourceTree = "<group>"; };
 		BEDB2ED6200EABAD001C6BBC /* ARKit-Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARKit-Drawing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,9 +61,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55C4DFEF288584EF00B956FB /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				55C4DFF0288584EF00B956FB /* Screensho01.PNG */,
+				55C4DFF2288584EF00B956FB /* Screensho02.PNG */,
+				55C4DFF1288584EF00B956FB /* Screensho03.PNG */,
+				55C4DFF6288584EF00B956FB /* Screensho04.PNG */,
+				55C4DFF5288584EF00B956FB /* Screensho05.PNG */,
+				55C4DFF3288584EF00B956FB /* Screensho06.PNG */,
+				55C4DFF4288584EF00B956FB /* Screensho07.PNG */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		BEDB2ECD200EABAD001C6BBC = {
 			isa = PBXGroup;
 			children = (
+				55C4DFEF288584EF00B956FB /* Screenshots */,
 				BEDB2ED8200EABAD001C6BBC /* ARKit-Drawing */,
 				BEDB2ED7200EABAD001C6BBC /* Products */,
 			);
@@ -150,10 +179,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C4DFFD288584EF00B956FB /* Screensho04.PNG in Resources */,
+				55C4DFFA288584EF00B956FB /* Screensho06.PNG in Resources */,
 				BEDB2EDC200EABAD001C6BBC /* models.scnassets in Resources */,
 				BEDB2EEE200ECB94001C6BBC /* Options.storyboard in Resources */,
 				BEDB2EE6200EABAD001C6BBC /* LaunchScreen.storyboard in Resources */,
+				55C4DFF8288584EF00B956FB /* Screensho03.PNG in Resources */,
+				55C4DFFC288584EF00B956FB /* Screensho05.PNG in Resources */,
+				55C4DFFB288584EF00B956FB /* Screensho07.PNG in Resources */,
+				55C4DFF7288584EF00B956FB /* Screensho01.PNG in Resources */,
 				BEDB2EE3200EABAD001C6BBC /* Assets.xcassets in Resources */,
+				55C4DFF9288584EF00B956FB /* Screensho02.PNG in Resources */,
 				BEDB2EE1200EABAD001C6BBC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

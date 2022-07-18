@@ -68,8 +68,9 @@ class OptionsContainerViewController: UIViewController, UINavigationControllerDe
             return fileEnumerator.compactMap { element in
                 let url = element as! URL
                 
-                guard url.pathExtension == "scn" || url.pathExtension == "dae" else { return nil }
+                guard url.pathExtension == "scn" || url.pathExtension == "usdz" else { return nil }
                                 
+                print(url)
                 return url.lastPathComponent
             }
         }()
@@ -77,15 +78,20 @@ class OptionsContainerViewController: UIViewController, UINavigationControllerDe
         let options = availableScenes.map { Option(name: $0, option: $0, showsDisclosureIndicator: false) }
         let selector = OptionSelectorViewController(options: options)
         selector.optionSelectionCallback = { [unowned self] name in
-            let nameWithoutExtension = name.replacingOccurrences(of: ".scn", with: "")
-            let scene = SCNScene(named: "\(resourceFolder)/\(nameWithoutExtension)/\(name)")!
-            self.delegate?.objectSelected(node: scene.rootNode)
+            let nameWithoutExtensionScn = name.replacingOccurrences(of: ".scn", with: "")
+            let nameWithoutExtensionUsdz = name.replacingOccurrences(of: ".usdz", with: "")
+            if let scene = SCNScene(named: "\(resourceFolder)/\(nameWithoutExtensionScn)/\(name)") {
+                self.delegate?.objectSelected(node: scene.rootNode)
+            }
+            if let scene = SCNScene(named: "\(resourceFolder)/\(nameWithoutExtensionUsdz)/\(name)") {
+                self.delegate?.objectSelected(node: scene.rootNode)
+            }
         }
         return selector
     }
     
     private func shapePicker() -> UIViewController {
-        let shapes: [Shape] = [.box, .sphere, .cylinder, .cone, .pyramid, .torus]
+        let shapes: [Shape] = [.box, .sphere, .cylinder, .cone, .capsule, .pyramid, .torus, .tube]
         let options = shapes.map { Option(option: $0) }
         
         let selector = OptionSelectorViewController(options: options)
@@ -102,10 +108,12 @@ class OptionsContainerViewController: UIViewController, UINavigationControllerDe
             ("Yellow", .yellow),
             ("Orange", .orange),
             ("Green", .green),
+            ("Gray", .gray),
             ("Blue", .blue),
             ("Cyan", .cyan),
             ("Brown", .brown),
             ("White", .white),
+            ("Purple", .purple),
         ]
         let options = colors.map { Option(name: $0.0, option: $0.1, showsDisclosureIndicator: true) }
         
@@ -118,7 +126,7 @@ class OptionsContainerViewController: UIViewController, UINavigationControllerDe
     }
     
     private func sizePicker() -> UIViewController {
-        let sizes: [Size] = [.small, .medium, .large, .extraLarge]
+        let sizes: [Size] = [.extraSmall, .small, .medium, .large, .extraLarge]
         let options = sizes.map { Option(option: $0, showsDisclosureIndicator: false) }
         
         let selector = OptionSelectorViewController(options: options)
@@ -134,6 +142,8 @@ class OptionsContainerViewController: UIViewController, UINavigationControllerDe
         let meters: CGFloat
         
         switch size {
+        case .extraSmall:
+            meters = 0.011
         case .small:
             meters = 0.033
         case .medium:
@@ -151,10 +161,14 @@ class OptionsContainerViewController: UIViewController, UINavigationControllerDe
             geometry = SCNCone(topRadius: 0.0, bottomRadius: meters, height: meters)
         case .cylinder:
             geometry = SCNCylinder(radius: meters / 2, height: meters)
+        case .capsule:
+            geometry = SCNCapsule(capRadius: meters / 8, height: meters)
         case .sphere:
             geometry = SCNSphere(radius: meters)
         case .torus:
             geometry = SCNTorus(ringRadius: 1.5 * meters, pipeRadius: 0.2 * meters)
+        case .tube:
+            geometry = SCNTube(innerRadius: meters / 8, outerRadius: meters / 2, height: meters)
         case .pyramid:
             geometry = SCNPyramid(width: meters, height: meters, length: 1.5 * meters)
         }
